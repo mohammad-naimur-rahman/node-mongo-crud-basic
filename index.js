@@ -1,10 +1,10 @@
 const express = require('express');
-const password = '.qmZGJ.A5-Fvfts';
 const bodyParser = require('body-parser');
 const MongoClient = require('mongodb').MongoClient;
 const ObjectID = require('mongodb').ObjectID;
+require('dotenv').config()
 
-const uri = "mongodb+srv://yourNaimur:.qmZGJ.A5-Fvfts@cluster0.avi8n.mongodb.net/organicDB?retryWrites=true&w=majority";
+const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@cluster0.avi8n.mongodb.net/organicDB?retryWrites=true&w=majority`;
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 
 const app = express();
