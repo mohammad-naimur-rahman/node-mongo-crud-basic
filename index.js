@@ -35,8 +35,6 @@ client.connect(err => {
         res.redirect('/');
     })
 
-    //client.close();
-
     app.delete('/delete/:id', (req, res) => {
         collection.deleteOne({ _id: ObjectID(req.params.id) })
             .then((result) => {
